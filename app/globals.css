@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-nude: #d1a881; /* Light warm tan (Outer stroke) */
+  --brand-terracotta: #a35a2a; /* Rich warm amber/terracotta (Intersection glow) */
+  --brand-espresso: #4a2711; /* Deep chocolate brown (Inner logo core) */
+  --dark-bg: #251308; /* Deep roasted espresso background */
+  --dark-card: #1c1511; /* Elevated card background */
+  --dark-border: #2d221c; /* Warm border stroke */
+  --dark-text: #f3ece7; /* Soft cream text (High contrast, easy on eyes) */
+  --dark-muted: #a39387; /* Muted warm taupe text */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-brand-nude: var(--brand-nude);
+  --color-brand-terracotta: var(--brand-terracotta);
+  --color-brand-espresso: var(--brand-espresso);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-card: var(--dark-card);
+  --color-dark-border: var(--dark-border);
+  --color-dark-text: var(--dark-text);
+  --color-dark-muted: var(--dark-muted);
 }
 
 body {
