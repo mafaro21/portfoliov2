@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Outfit, Inter } from 'next/font/google';
-// import { GoogleAnalytics } from '@next/third-parties/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const outfit = Outfit({
   subsets: ['latin'],
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-full flex flex-col">{children}</body>
       {/* Replace G-XYZ1234567 with your actual Measurement ID */}
-      {/* <GoogleAnalytics gaId="G-XYZ1234567" /> */}
+      <GoogleAnalytics gaId="G-ZRLTGCN8L1" />
     </html>
   );
 }
