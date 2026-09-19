@@ -26,6 +26,7 @@ export interface ShowcaseSite {
     link?: string; // Optional so mobile-only apps don't break
     isMobileOnly?: boolean;
     image: string;
+    phoneImage: string;
     images?: string[]; // Multiple screenshots for mobile app lightboxes
     aspectRatio: string;
     accentColor: string;
@@ -40,26 +41,28 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Minimalist retail interface featuring dark glassmorphism, fluid product cards, and smooth checkout flows.",
         link: "https://iclik-website.vercel.app/",
         image: "/showcase/apple.png",
+        phoneImage: "/showcase/applePhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-neutral-700/20 to-neutral-900/10",
         tags: ["Next.js", "Tailwind CSS", "Framer Motion"]
     },
-    {
-        id: "pay-app",
-        title: "SwiftPay Wallet",
-        category: "Fintech Mobile App",
-        description: "Native-inspired mobile payment app with QR checkout, instant P2P transfers, and real-time transaction analytics.",
-        isMobileOnly: true,
-        image: "/showcase/pay-app-1.webp",
-        images: [
-            "/showcase/pay-app-1.webp",
-            "/showcase/pay-app-2.webp",
-            "/showcase/pay-app-3.webp"
-        ],
-        aspectRatio: "aspect-[9/16]",
-        accentColor: "from-emerald-500/20 to-teal-700/10",
-        tags: ["React Native", "Tailwind CSS", "Mobile UX"]
-    },
+    // {
+    //     id: "pay-app",
+    //     title: "SwiftPay Wallet",
+    //     category: "Fintech Mobile App",
+    //     description: "Native-inspired mobile payment app with QR checkout, instant P2P transfers, and real-time transaction analytics.",
+    //     isMobileOnly: true,
+    //     image: "/showcase/pay-app-1.webp",
+    //     phoneImage: "/showcase/pay-app-1.webp",
+    //     images: [
+    //         "/showcase/pay-app-1.webp",
+    //         "/showcase/pay-app-2.webp",
+    //         "/showcase/pay-app-3.webp"
+    //     ],
+    //     aspectRatio: "aspect-[9/16]",
+    //     accentColor: "from-emerald-500/20 to-teal-700/10",
+    //     tags: ["React Native", "Tailwind CSS", "Mobile UX"]
+    // },
     {
         id: "appliances",
         title: "Apex Home Appliances",
@@ -67,6 +70,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Sleek storefront featuring interactive 360° product views, spec comparison tables, and automated warranty booking.",
         link: "https://appliances-demo.vercel.app",
         image: "/showcase/appliances.png",
+        phoneImage: "/showcase/appliances.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-cyan-500/20 to-blue-700/10",
         tags: ["Next.js", "Tailwind CSS", "Zustand"]
@@ -78,6 +82,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Sophisticated booking portal for private airport lounges with real-time suite reservations and concierge scheduling.",
         link: "https://executive-lounge-website.vercel.app/",
         image: "/showcase/lounge.png",
+        phoneImage: "/showcase/loungePhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-amber-500/20 to-orange-600/10",
         tags: ["React", "Tailwind CSS", "UI Design"]
@@ -89,6 +94,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "High-converting corporate landing page tailored for advisory firms, featuring clean typography and lead capture.",
         link: "https://bm-consulting-website.vercel.app/",
         image: "/showcase/consulting.png",
+        phoneImage: "/showcase/constructionPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-blue-500/20 to-indigo-600/10",
         tags: ["Next.js", "TypeScript", "Tailwind CSS"]
@@ -100,6 +106,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Bold, modern portfolio design for heavy infrastructure projects with interactive showcases and equipment specs.",
         link: "https://triad-construction-website.vercel.app/",
         image: "/showcase/construction.png",
+        phoneImage: "/showcase/consultingPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-emerald-500/20 to-teal-600/10",
         tags: ["React", "Tailwind CSS"]
@@ -111,6 +118,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "High-contrast financial portal featuring loan repayment calculators, credit sliders, and instant quote engines.",
         link: "https://swift-choice-finance.vercel.app/",
         image: "/showcase/loans.png",
+        phoneImage: "/showcase/loansPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-purple-500/20 to-pink-600/10",
         tags: ["Next.js", "Tailwind CSS", "Interactive UI"]
@@ -204,7 +212,7 @@ export default function ShowcasePage() {
                         <div className="flex items-center gap-2 bg-brand-espresso/5 p-1 rounded-2xl border border-brand-espresso/10">
                             <button
                                 onClick={() => setPreviewDevice("desktop")}
-                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono transition-all ${previewDevice === "desktop"
+                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${previewDevice === "desktop"
                                     ? "bg-brand-espresso text-brand-nude shadow-md"
                                     : "text-brand-espresso/70 hover:text-brand-espresso"
                                     }`}
@@ -214,7 +222,7 @@ export default function ShowcasePage() {
                             </button>
                             <button
                                 onClick={() => setPreviewDevice("mobile")}
-                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono transition-all ${previewDevice === "mobile"
+                                className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${previewDevice === "mobile"
                                     ? "bg-brand-espresso text-brand-nude shadow-md"
                                     : "text-brand-espresso/70 hover:text-brand-espresso"
                                     }`}
@@ -224,9 +232,9 @@ export default function ShowcasePage() {
                             </button>
                         </div>
 
-                        <span className="text-xs font-mono text-brand-espresso/50 hidden sm:inline-block">
+                        {/* <span className="text-xs font-mono text-brand-espresso/50 hidden sm:inline-block">
                             {SHOWCASE_SITES.length} Concepts Featured
-                        </span>
+                        </span> */}
                     </div>
                 </header>
 
@@ -339,8 +347,8 @@ export default function ShowcasePage() {
             <motion.nav
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.1, duration: 0.3 }}
-                className="fixed bottom-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-dark-card/90 backdrop-blur-md border border-brand-terracotta/30 shadow-2xl text-dark-text"
+                transition={{ delay: 0.2, duration: 0.4 }}
+                className="fixed bottom-6 z-50 flex items-center gap-3 px-4 py-3 rounded-full bg-dark-card/90 backdrop-blur-md border border-brand-terracotta/30 shadow-2xl text-dark-text"
             >
                 <div className="flex items-center gap-1.5 border-r border-dark-muted pr-3">
                     <a
@@ -350,7 +358,7 @@ export default function ShowcasePage() {
                         aria-label="GitHub"
                         className="p-2 rounded-full hover:bg-gray-300 hover:text-gray-800 transition-colors"
                     >
-                        <BsGithub className="w-5 h-5" />
+                        <BsGithub className="w-6 h-6" />
                     </a>
                     <a
                         href="https://www.linkedin.com/in/mafaro-mushonga-b8a68a231"
@@ -359,34 +367,35 @@ export default function ShowcasePage() {
                         aria-label="LinkedIn"
                         className="p-2 rounded-full hover:bg-blue-300 hover:text-blue-800 transition-colors"
                     >
-                        <BsLinkedin className="w-5 h-5" />
+                        <BsLinkedin className="w-6 h-6" />
                     </a>
                     <a
                         href="mailto:mafaro2105@gmail.com"
                         aria-label="Email"
                         className="p-2 rounded-full hover:bg-brand-espresso hover:text-brand-nude transition-colors"
                     >
-                        <Mail className="w-5 h-5" />
+                        <Mail className="w-6 h-6" />
                     </a>
                     <a
-                        href="https://wa.me/263781926018?text=Hi%20Mafaro,%20I%20saw%20your%20showcase%20and%20would%20like%20to%20chat."
+                        href="https://wa.me/263781926018?text=Hi%20Mafaro,%20I%20saw%20your%20portfolio%20and%20I'd%20like%20to%20discuss%20a%20website%20project."
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#25D366] text-black font-bold text-xs hover:brightness-110 transition-all shadow-md shrink-0"
+                        className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#25D366] text-black font-bold text-xs hover:brightness-110 transition-all shadow-md shrink-0"
                     >
-                        <BsWhatsapp className="w-5 h-5" />
+                        <BsWhatsapp className="w-6 h-6" />
+                        {/* <span>WhatsApp</span> */}
                     </a>
                 </div>
 
                 <Link
                     href="/"
-                    className="flex items-center gap-1.5 text-md font-mono text-white hover:text-brand-nude transition-colors px-2.5 py-1 rounded-full hover:bg-brand-espresso"
+                    className="flex items-center gap-2 text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
                 >
                     <span>Home</span>
                 </Link>
                 <Link
                     href="/projects"
-                    className="flex items-center gap-1.5 text-md font-mono text-white hover:text-brand-nude transition-colors px-2.5 py-1 rounded-full hover:bg-brand-espresso"
+                    className="flex items-center gap-2 text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
                 >
                     <span>Projects</span>
                 </Link>
@@ -417,7 +426,7 @@ export default function ShowcasePage() {
                                     onClick={closeModal}
                                     className="p-2 rounded-full bg-dark-bg hover:bg-brand-espresso text-dark-text transition-colors"
                                 >
-                                    <X className="w-5 h-5" />
+                                    <X className="w-6 h-6" />
                                 </button>
                             </div>
 
@@ -435,13 +444,13 @@ export default function ShowcasePage() {
                                             onClick={prevImage}
                                             className="absolute left-2 p-2 rounded-full bg-black/70 text-white hover:bg-brand-terracotta transition-colors"
                                         >
-                                            <ChevronLeft className="w-5 h-5" />
+                                            <ChevronLeft className="w-6 h-6" />
                                         </button>
                                         <button
                                             onClick={nextImage}
                                             className="absolute right-2 p-2 rounded-full bg-black/70 text-white hover:bg-brand-terracotta transition-colors"
                                         >
-                                            <ChevronRight className="w-5 h-5" />
+                                            <ChevronRight className="w-6 h-6" />
                                         </button>
                                     </>
                                 )}
@@ -467,7 +476,7 @@ function FrameContainer({
     return (
         <div
             className={`w-full transition-all duration-500 transform group-hover/frame:scale-[1.02] ${previewDevice === "mobile" || site.isMobileOnly
-                ? "max-w-[240px] aspect-[9/16] rounded-[2.5rem] p-3 bg-black border-4 border-neutral-800 shadow-2xl relative"
+                ? "max-w-[240px] aspect-[9/18] rounded-[2rem] p-3 bg-black border-2 border-neutral-800 shadow-2xl relative"
                 : "w-full rounded-xl bg-neutral-900 border border-white/10 shadow-2xl overflow-hidden"
                 }`}
         >
@@ -485,15 +494,15 @@ function FrameContainer({
 
             {/* Mobile Notch */}
             {(previewDevice === "mobile" || site.isMobileOnly) && (
-                <div className="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-4 bg-black rounded-b-xl z-20 flex items-center justify-center">
-                    <div className="w-8 h-1 rounded-full bg-neutral-800" />
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-4 bg-black rounded-b-xl rounded-t-xl z-20 flex items-center justify-center">
+                    {/* <div className="w-8 h-1 rounded-full bg-neutral-800" /> */}
                 </div>
             )}
 
             {/* Image Viewport */}
             <div className={`${site.aspectRatio} relative overflow-hidden bg-neutral-950 h-full w-full rounded-xl`}>
                 <img
-                    src={site.image}
+                    src={previewDevice === 'desktop' ? site.image : site.phoneImage}
                     alt={site.title}
                     className="w-full h-full object-cover group-hover/frame:opacity-90 transition-opacity"
                 />

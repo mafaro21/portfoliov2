@@ -291,7 +291,7 @@ export default function ProjectsPage() {
                     </div>
 
                     <div className="space-y-2 pt-2">
-                        <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-dark-text uppercase">
+                        <h1 className="text-3xl sm:text-6xl font-black tracking-tight text-dark-text uppercase">
                             Selected Projects
                         </h1>
                         <p className="text-sm sm:text-base text-dark-muted max-w-2xl leading-relaxed">
@@ -410,7 +410,7 @@ export default function ProjectsPage() {
                 </main>
 
                 {/* Compliance Footer Note */}
-                <div className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-3/4 mx-auto">
+                <div className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-full md:w-3/4 mx-auto">
                     <ShieldCheck className="w-6 h-6 text-brand-nude shrink-0 mt-0.5" />
                     <div className="space-y-1">
                         <h4 className="text-sm font-bold text-dark-text">Data Privacy & Security Guaranteed</h4>
@@ -534,13 +534,13 @@ export default function ProjectsPage() {
 
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
+                    className="flex items-center gap-2 text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
                 >
                     <span>Home</span>
                 </Link>
                 <Link
                     href="/showcase"
-                    className="flex items-center gap-2 text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
+                    className="flex items-center gap-2 text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
                 >
                     <span>Showcase</span>
                 </Link>

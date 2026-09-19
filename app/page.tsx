@@ -75,7 +75,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             variants={fadeInUp}
-            className="pt-4 space-y-4"
+            className="pt-1 space-y-4"
           >
 
             <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black tracking-tighter text-dark-text leading-[0.9] uppercase">
@@ -107,10 +107,10 @@ export default function Home() {
               {[
                 "TypeScript",
                 "Next.js & React",
+                "Tailwind CSS",
                 "Node.js",
                 "Python",
                 "SQL",
-                "Tailwind CSS"
               ].map((tech, idx) => (
                 <span
                   key={idx}
@@ -190,6 +190,8 @@ export default function Home() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
                 />
               </div>
+
+
               <div className="p-6 space-y-3">
                 <div className="flex items-center justify-between">
                   <h3 className="text-lg font-bold text-dark-text group-hover:text-brand-nude group-hover:underline transition-colors flex items-center gap-2">
@@ -220,7 +222,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-3/4 mx-auto"
+            className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-full md:w-3/4 mx-auto"
           >
             <ShieldCheck className="w-6 h-6 text-brand-nude shrink-0 mt-0.5" />
             <div className="space-y-1">
@@ -249,10 +251,10 @@ export default function Home() {
       <motion.nav
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.5 }}
-        className="fixed bottom-6 z-50 flex items-center gap-3 px-5 py-3 rounded-full bg-dark-card/90 backdrop-blur-md border border-brand-terracotta/30 shadow-2xl text-dark-text"
+        transition={{ delay: 0.2, duration: 0.4 }}
+        className="fixed bottom-6 z-50 flex items-center gap-3 px-3 py-3 rounded-full bg-dark-card/90 backdrop-blur-md border border-brand-terracotta/30 shadow-2xl text-dark-text"
       >
-        <div className="flex items-center gap-1 border-r border-dark-border pr-3">
+        <div className="flex items-center gap-1.5 border-r border-dark-muted pr-3">
           <a
             href="https://github.com/mafaro21"
             target="_blank"
@@ -264,9 +266,10 @@ export default function Home() {
           </a>
           <a
             href="https://www.linkedin.com/in/mafaro-mushonga-b8a68a231"
+            target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="p-2 rounded-full hover:bg-blue-300 hover:text-blue-800 tranBstion-colors"
+            className="p-2 rounded-full hover:bg-blue-300 hover:text-blue-800 transition-colors"
           >
             <BsLinkedin className="w-6 h-6" />
           </a>
@@ -284,18 +287,19 @@ export default function Home() {
             className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[#25D366] text-black font-bold text-xs hover:brightness-110 transition-all shadow-md shrink-0"
           >
             <BsWhatsapp className="w-6 h-6" />
+            {/* <span>WhatsApp</span> */}
           </a>
         </div>
 
         <Link
-          href="/projects"
-          className="flex items-center gap-1.5 text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
+          href="projects"
+          className="flex items-center text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-1 py-1 rounded-full hover:bg-brand-espresso"
         >
           <span>Projects</span>
         </Link>
         <Link
           href="/showcase"
-          className="flex items-center gap-2 text-md font-mono text-white hover:text-brand-nude transition-colors px-2 py-1 rounded-full hover:bg-brand-espresso"
+          className="flex items-center text-sm md:text-md font-mono text-white hover:text-brand-nude transition-colors px-1 py-1 rounded-full hover:bg-brand-espresso"
         >
           <span>Showcase</span>
         </Link>
