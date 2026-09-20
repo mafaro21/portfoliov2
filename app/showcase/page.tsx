@@ -68,9 +68,9 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         title: "Apex Home Appliances",
         category: "Retail & E-Commerce",
         description: "Sleek storefront featuring interactive 360° product views, spec comparison tables, and automated warranty booking.",
-        link: "https://appliances-demo.vercel.app",
+        link: "https://capri-website.vercel.app",
         image: "/showcase/appliances.png",
-        phoneImage: "/showcase/appliances.png",
+        phoneImage: "/showcase/appliancesPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-cyan-500/20 to-blue-700/10",
         tags: ["Next.js", "Tailwind CSS", "Zustand"]
@@ -94,7 +94,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "High-converting corporate landing page tailored for advisory firms, featuring clean typography and lead capture.",
         link: "https://bm-consulting-website.vercel.app/",
         image: "/showcase/consulting.png",
-        phoneImage: "/showcase/constructionPhone.png",
+        phoneImage: "/showcase/consultingPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-blue-500/20 to-indigo-600/10",
         tags: ["Next.js", "TypeScript", "Tailwind CSS"]
@@ -106,7 +106,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Bold, modern portfolio design for heavy infrastructure projects with interactive showcases and equipment specs.",
         link: "https://triad-construction-website.vercel.app/",
         image: "/showcase/construction.png",
-        phoneImage: "/showcase/consultingPhone.png",
+        phoneImage: "/showcase/constructionPhone.png",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-emerald-500/20 to-teal-600/10",
         tags: ["React", "Tailwind CSS"]

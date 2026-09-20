@@ -42,7 +42,7 @@ export default function Home() {
         />
 
         {/* ================= HEADER & HERO ================= */}
-        <header className="space-y-10 border-b border-dark-border/50 pb-12">
+        <header className="space-y-10 border-dark-border/50">
 
           {/* Top Brand Bar */}
           <motion.div
@@ -114,7 +114,7 @@ export default function Home() {
               ].map((tech, idx) => (
                 <span
                   key={idx}
-                  className="px-3.5 py-1.5 rounded-xl bg-dark-card border border-dark-border hover:border-brand-nude/40 transition-colors"
+                  className="px-3.5 py-1.5 rounded-2xl bg-dark-card border border-dark-border hover:border-brand-nude/40 transition-colors"
                 >
                   {tech}
                 </span>
@@ -125,7 +125,7 @@ export default function Home() {
         </header>
 
         {/* ================= SHOWCASE / PROJECTS ================= */}
-        <main className="space-y-12">
+        <main className="space-y-1">
 
           <div className="flex items-center justify-between border-b border-dark-border/40 pb-4">
             <h2 className="text-2xl font-bold text-dark-text tracking-tight">Featured Projects</h2>
@@ -222,7 +222,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-full md:w-3/4 mx-auto"
+            className="p-6 rounded-2xl bg-dark-card/50 border border-dark-border flex justify-center items-center gap-4 w-full md:w-3/4 mx-auto mt-9"
           >
             <ShieldCheck className="w-6 h-6 text-brand-nude shrink-0 mt-0.5" />
             <div className="space-y-1">
