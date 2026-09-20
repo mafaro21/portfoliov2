@@ -70,7 +70,7 @@ export const SHOWCASE_SITES: ShowcaseSite[] = [
         description: "Sleek storefront featuring interactive 360° product views, spec comparison tables, and automated warranty booking.",
         link: "https://capri-website.vercel.app",
         image: "/showcase/appliances.png",
-        phoneImage: "/showcase/appliancesPhone.png",
+        phoneImage: "/showcase/appliancesPhone.PNG",
         aspectRatio: "aspect-[16/9]",
         accentColor: "from-cyan-500/20 to-blue-700/10",
         tags: ["Next.js", "Tailwind CSS", "Zustand"]
